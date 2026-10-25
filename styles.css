@@ -1,0 +1,82 @@
+:root {
+  color-scheme: light;
+  --blue: #145da0;
+  --line: #d9e2ec;
+  --text: #252525;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 20px; }
+body { margin: 0; background: #fff; color: var(--text); font: 15px/1.6 Arial, Helvetica, sans-serif; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.page { display: grid; grid-template-columns: 205px minmax(0, 850px); gap: 42px; max-width: 1160px; margin: 0 auto; padding: 30px 28px; }
+.sidebar { position: sticky; top: 30px; align-self: start; max-height: calc(100dvh - 60px); overflow-y: auto; border-right: 1px solid var(--line); padding: 4px 24px 20px 0; }
+.site-name { display: block; font-size: 17px; font-weight: bold; line-height: 1.4; margin-bottom: 22px; }
+nav { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; }
+nav a { padding: 2px 0; }
+.nav-group { color: #333; font-weight: bold; margin-top: 20px; }
+main { min-width: 0; overflow-wrap: break-word; }
+section { margin: 0 0 28px; }
+h1 { color: var(--blue); font-size: 29px; font-weight: 500; line-height: 1.25; margin: 0 0 20px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+h2 { color: var(--blue); font-size: 21px; font-weight: 500; margin: 0 0 12px; padding-bottom: 5px; border-bottom: 1px solid var(--line); }
+p { margin: 0 0 13px; }
+strong { font-weight: 600; }
+ul { margin: 0; padding-left: 23px; }
+li { padding: 1px 0; }
+.publication { display: grid; grid-template-columns: 43px minmax(0, 1fr); column-gap: 12px; margin-bottom: 20px; }
+.pub-year { font-size: 13px; font-weight: bold; padding-top: 1px; color: #444; }
+.publication h3 { font-size: 15px; font-weight: 600; line-height: 1.45; margin: 2px 0 5px; }
+.authors { font-size: 12px; line-height: 1.5; margin: 0 0 3px; color: #444; }
+.venue { font-size: 12px; font-style: italic; line-height: 1.5; margin: 0; }
+.background-list li { margin-bottom: 9px; font-size: 14px; }
+footer { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 25px; font-size: 11px; color: #666; }
+.skip-link { position: absolute; left: 15px; top: -60px; padding: 8px 12px; background: #fff; z-index: 2; }
+.skip-link:focus { top: 5px; }
+@media (max-width: 700px) {
+  body { font-size: 14px; }
+  .page { grid-template-columns: 145px minmax(0, 1fr); gap: 22px; padding: 22px 18px; }
+  .sidebar { top: 22px; max-height: calc(100dvh - 44px); padding-right: 14px; }
+  .site-name { font-size: 15px; }
+  h1 { font-size: 25px; }
+  h2 { font-size: 19px; }
+}
+@media (max-width: 480px) {
+  .page { grid-template-columns: 105px minmax(0, 1fr); gap: 15px; padding: 18px 12px; }
+  .sidebar { top: 18px; max-height: calc(100dvh - 36px); padding-right: 10px; }
+  .site-name { font-size: 14px; }
+  nav { font-size: 12px; gap: 8px; }
+  h1 { font-size: 22px; overflow-wrap: anywhere; }
+  .publication { grid-template-columns: 1fr; gap: 2px; }
+  .publication h3 { font-size: 14px; overflow-wrap: anywhere; }
+  .pub-year { margin-bottom: 3px; }
+  .background-list { padding-left: 16px; }
+}
+@media print {
+  .sidebar, .skip-link { display: none; }
+  .page { display: block; max-width: none; padding: 0; }
+  .publication, .background-list li { break-inside: avoid; }
+}
+
+.profile-header { display: flex; align-items: flex-start; gap: 24px; }
+.photo-frame { width: 130px; height: 155px; overflow: hidden; flex: 0 0 auto; }
+.profile-photo {
+  display: block;
+  width: 130px;
+  height: 155px;
+  object-fit: cover;
+  object-position: 45% 50%;
+  transform: scale(1.8);
+  transform-origin: 50% 25%;
+}
+.profile-info { min-width: 0; flex: 1; }
+.profile-info h1 { margin-bottom: 15px; }
+.profile-info p:last-child { margin-bottom: 0; }
+@media (max-width: 700px) {
+  .profile-header { flex-direction: column; gap: 16px; }
+  .profile-info { width: 100%; }
+}
+
+.scholar-icon { vertical-align: -4px; margin-right: 3px; }
+.goals-list li { margin-bottom: 10px; }
+#contact a { overflow-wrap: anywhere; }
